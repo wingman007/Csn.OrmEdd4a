@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{12645F53-39A9-426F-8229-8E42006EA57F}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{DC0159BD-5218-41B4-A4D4-04C2B850A27D}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Csn.OrmEdd4a.Console</RootNamespace>
-    <AssemblyName>Csn.OrmEdd4a.Console</AssemblyName>
+    <RootNamespace>Csn.OrmEdd42.Services</RootNamespace>
+    <AssemblyName>Csn.OrmEdd42.Services</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,25 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Csn.OrmEdd4a.Dal\Csn.OrmEdd4a.Dal.csproj">
-      <Project>{a757db46-97e7-489e-bf81-9a5fbc397557}</Project>
-      <Name>Csn.OrmEdd4a.Dal</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Csn.OrmEdd4a.Models\Csn.OrmEdd4a.Models.csproj">
-      <Project>{4c7b9965-f49a-4978-a0a2-82a47f084b4f}</Project>
-      <Name>Csn.OrmEdd4a.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Csn.OrmEdd4a.Services\Csn.OrmEdd4a.Services.csproj">
-      <Project>{614d4fe6-9ce8-419c-9fc3-4c25aad006d0}</Project>
-      <Name>Csn.OrmEdd4a.Services</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

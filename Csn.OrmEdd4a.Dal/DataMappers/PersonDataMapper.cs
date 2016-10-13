@@ -1,10 +1,10 @@
-﻿namespace Csn.OrmEdd4a.Dal
+﻿namespace Csn.OrmEdd4a.Dal.DataMappers
 {
     using Csn.OrmEdd4a.Models;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    public class PersonDataMapper
+    public class PersonDataMapper : IDataMapper<Person>
     {
         private readonly string _file;
 
@@ -64,7 +64,8 @@
                         person.Id,
                         person.Name,
                         person.FamilyName,
-                        person.BirthDate.ToLongDateString(),
+                        // person.BirthDate.ToLongDateString(),
+                        person.BirthDate.ToString("yyyy-MM-dd"),
                         person.Address
                      );
                 }
@@ -114,15 +115,71 @@
             return persons;
         }
 
+        public Person Get(int id)
+        {
+            List<Person> persons = GetAll();
+            foreach(Person person in persons)
+            {
+                if (person.Id == id)
+                {
+                    return person;
+                }    
+            }
+            return null;  
+        }
         public void Update(Person person)
         {
             List<Person> persons = GetAll();
-            foreach(Person personTemp in persons)
+            for (int i = 0; i < persons.Count; i++ )
             {
-                if (personTemp.Id == person.Id)
+                if (persons[i].Id == person.Id)
                 {
+                    persons[i] = person;
+                    break;
+                }
+            }
+
+            SaveAll(persons);
+        }
+
+        public void Delete(int id)
+        {
+            List<Person> persons = GetAll();
+            for (int i = 0; i < persons.Count; i++)
+            {
+                if (persons[i].Id == id)
+                {
+                    persons.RemoveAt(i);
+                    break;
+                }
+            }
+            SaveAll(persons);
+        }
+
+        private void SaveAll(List<Person> persons)
+        {
+            try
+            {
+                StreamWriter writer = new StreamWriter(_file, false);
+                using (writer)
+                {
+                    foreach (Person person in persons)
+                    {
+                        writer.WriteLine("{0},{1},{2},{3},{4}",
+                            person.Id,
+                            person.Name,
+                            person.FamilyName,
+                            // person.BirthDate.ToLongDateString(),
+                            person.BirthDate.ToString("yyyy-MM-dd"),
+                            person.Address
+                         );
+                    }
 
                 }
+            }
+            catch (IOException e)
+            {
+                Console.Error.WriteLine("IOException Message{0}", e.Message);
             }
         }
     }

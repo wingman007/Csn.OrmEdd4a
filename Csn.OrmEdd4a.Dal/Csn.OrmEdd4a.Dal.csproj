@@ -39,7 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PersonDataMapper.cs" />
+    <Compile Include="DataMappers\IDataMapper.cs" />
+    <Compile Include="DataMappers\PersonDataMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
