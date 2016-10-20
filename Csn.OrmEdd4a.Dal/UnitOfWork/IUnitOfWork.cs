@@ -9,7 +9,7 @@ namespace Csn.OrmEdd4a.Dal.UnitOfWork
 {
     interface IUnitOfWork
     {
-        public PersonRepository Persons { get; private set; }
+        PersonRepository Persons { get; }
 
         void SaveAll(); // Complete(), Flush();
     }
