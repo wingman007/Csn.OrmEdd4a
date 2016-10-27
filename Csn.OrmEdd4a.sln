@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csn.OrmEdd4a.Dal", "Csn.Orm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csn.OrmEdd4a.Services", "Csn.OrmEdd4a.Services\Csn.OrmEdd4a.Services.csproj", "{614D4FE6-9CE8-419C-9FC3-4C25AAD006D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csn.OrmEdd4a.App", "Csn.OrmEdd4a.App\Csn.OrmEdd4a.App.csproj", "{ACA738DF-F7CC-45B8-A549-E65A72969039}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{614D4FE6-9CE8-419C-9FC3-4C25AAD006D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{614D4FE6-9CE8-419C-9FC3-4C25AAD006D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{614D4FE6-9CE8-419C-9FC3-4C25AAD006D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACA738DF-F7CC-45B8-A549-E65A72969039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACA738DF-F7CC-45B8-A549-E65A72969039}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACA738DF-F7CC-45B8-A549-E65A72969039}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACA738DF-F7CC-45B8-A549-E65A72969039}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
