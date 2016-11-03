@@ -1,5 +1,6 @@
 ﻿using Csn.OrmEdd4a.Dal.DataMappers;
 using Csn.OrmEdd4a.Dal.Repositoris;
+using Csn.OrmEdd4a.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,19 +9,29 @@ using System.Threading.Tasks;
 
 namespace Csn.OrmEdd4a.Dal.UnitOfWork
 {
-    class UnitOfWork : IUnitOfWork
+    public class UnitOfWork // : IUnitOfWork
     {
-        private readonly PersonRepository _persons;
+        // private readonly PersonRepository _persons;
         public UnitOfWork()
         {
-            _persons = new PersonRepository(new PersonDataMapper());
+            // _persons = new PersonRepository(new PersonDataMapper());
+            // Persons = new PersonRepository(new PersonDataMapper());
         }
-        public PersonRepository Persons
+        //public PersonRepository Persons
+        //{
+        //    get { return _persons; } // throw new NotImplementedException();
+        //}
+
+        public IRepository<Person> Persons { get; protected set; }
+
+        public IRepository<Phone> Phones { get; protected set; }
+
+        public void SaveChanges()
         {
-            get { return _persons; } // throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        public void SaveAll()
+        public void Dispose()
         {
             throw new NotImplementedException();
         }

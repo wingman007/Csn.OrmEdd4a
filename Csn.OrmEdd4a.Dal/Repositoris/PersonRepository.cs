@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Csn.OrmEdd4a.Dal.Repositoris
 {
-    class PersonRepository : IRepository<Person>
+    public class PersonRepository // : IRepository<Person>
     {
         private  List<Person> _dataSet;
         private readonly IDataMapper<Person> _dataMapper;
@@ -54,5 +54,11 @@ namespace Csn.OrmEdd4a.Dal.Repositoris
             }
             return _dataSet;
         }
+
+        public Person Update(Person entity)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
