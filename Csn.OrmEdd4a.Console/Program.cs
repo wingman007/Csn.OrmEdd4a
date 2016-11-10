@@ -127,7 +127,7 @@
             Console.Write("Address: ");
             person.Address = Console.ReadLine();
 
-            IDataMapper<Person> personDm = new PersonDataMapper();
+            IDataMapper<Person> personDm = new PersonFileDataMapper();
             personDm.Insert(person);
         }
 
@@ -140,7 +140,7 @@
                 Console.Write("Please enter the id of a record to Update");
             } while (!int.TryParse(Console.ReadLine(), out id));
 
-            IDataMapper<Person> personDm = new PersonDataMapper();
+            IDataMapper<Person> personDm = new PersonFileDataMapper();
             Person person = personDm.Get(id);
 
             // view
@@ -166,8 +166,9 @@
                 Console.Write("Please enter the id of a record to Delete: ");
             } while (!int.TryParse(Console.ReadLine(), out id));
 
-            IDataMapper<Person> personDm = new PersonDataMapper();
-            personDm.Delete(id);
+            IDataMapper<Person> personDm = new PersonFileDataMapper();
+            var entity = personDm.Get(id);
+            personDm.Delete(entity);
         }
     }
 }

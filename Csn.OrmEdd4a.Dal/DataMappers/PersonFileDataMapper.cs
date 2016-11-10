@@ -4,16 +4,16 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
-    public class PersonDataMapper : IDataMapper<Person>
+    public class PersonFileDataMapper : IDataMapper<Person>
     {
         private readonly string _file;
 
-        public PersonDataMapper()
+        public PersonFileDataMapper()
         {
             _file = "Persons.csv";
         }
 
-        public PersonDataMapper(string file)
+        public PersonFileDataMapper(string file)
         {
             _file = file;
         }
@@ -115,12 +115,12 @@
             return persons;
         }
 
-        public Person Get(int id)
+        public Person Get(object id) // int
         {
             List<Person> persons = GetAll();
             foreach(Person person in persons)
             {
-                if (person.Id == id)
+                if (person.Id == (int)id)
                 {
                     return person;
                 }    
@@ -142,12 +142,12 @@
             SaveAll(persons);
         }
 
-        public void Delete(int id)
+        public void Delete(Person entity)
         {
             List<Person> persons = GetAll();
             for (int i = 0; i < persons.Count; i++)
             {
-                if (persons[i].Id == id)
+                if (persons[i].Id == entity.Id)
                 {
                     persons.RemoveAt(i);
                     break;

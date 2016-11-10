@@ -55,17 +55,21 @@
     <Compile Include="CsnOrmEdd4aDbContext.cs" />
     <Compile Include="DataMappers\IDataMapper.cs" />
     <Compile Include="DataMappers\PersonAdoDataMapper.cs" />
-    <Compile Include="DataMappers\PersonDataMapper.cs" />
+    <Compile Include="DataMappers\PersonFileDataMapper.cs" />
     <Compile Include="Migrations\201611031532280_InitialCreate.cs" />
     <Compile Include="Migrations\201611031532280_InitialCreate.Designer.cs">
       <DependentUpon>201611031532280_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositoris\GenericAdoRepository.cs" />
     <Compile Include="Repositoris\GenericEfRepository.cs" />
+    <Compile Include="Repositoris\GenericFileRepository.cs" />
     <Compile Include="Repositoris\IRepository.cs" />
     <Compile Include="Repositoris\PersonRepository.cs" />
+    <Compile Include="UnitOfWork\AdoUnitOfWork.cs" />
     <Compile Include="UnitOfWork\EfUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\FileUnitOfWork.cs" />
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
     <Compile Include="UnitOfWork\IUnitOfWork.cs" />
   </ItemGroup>

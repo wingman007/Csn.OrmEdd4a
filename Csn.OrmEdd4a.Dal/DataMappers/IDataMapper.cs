@@ -14,10 +14,10 @@ namespace Csn.OrmEdd4a.Dal.DataMappers
 
         List<T> GetAll();
 
-        T Get(int id);
+        T Get(object id); // int
 
         void Update(T entity);
 
-        void Delete(int id);
+        void Delete(T entity); // int id
     }
 }

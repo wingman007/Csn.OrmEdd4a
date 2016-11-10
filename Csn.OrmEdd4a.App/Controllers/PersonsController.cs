@@ -9,17 +9,30 @@ using System.Web.Mvc;
 using Csn.OrmEdd4a.Models;
 using Csn.OrmEdd4a.Dal;
 using Csn.OrmEdd4a.Dal.UnitOfWork;
+using System.Data.OleDb;
 
 namespace Csn.OrmEdd4a.App.Controllers
 {
     public class PersonsController : Controller
     {
+        // 1. working directly with Ef. Code generator.
         // private CsnOrmEdd4aDbContext db = new CsnOrmEdd4aDbContext();
 
+        // 2. Working with our adapter between Ef and the App
         private IUnitOfWork db = new EfUnitOfWork(new CsnOrmEdd4aDbContext());
-        // ToDo
-        // private IUnitOfWork db = new AdoUnitOfWork(new CsnOrmEdd4aDbContext());
-        // private IUnitOfWork db = new FileUnitOfWork(new CsnOrmEdd4aDbContext());
+
+        // 3. Working with ADO
+        // Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Stoyan\Source\Repos\Csn.OrmEdd3b\Csn.OrmEdd.Console\App_Data\CsnOrmEdd3b.mdb
+        //      <connectionStrings>
+        //          <add name = "ConnectionString" connectionString="data source=.;Initial Catalog=MyDatabase;Integrated Security=SSPI" providerName="System.Data.SqlClient" />
+        //      </connectionStrings>
+        // System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString
+
+//-        private IUnitOfWork db = new AdoUnitOfWork(new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\fmi\Source\Repos\Csn.OrmEdd4a\Csn.OrmEdd4a.Console\App_Data\CsnOrmEdd4a.mdb;Persist Security Info=True"));
+
+        // 4. Files
+        // private IUnitOfWork db = new FileUnitOfWork();
+//-        private IUnitOfWork db = new FileUnitOfWork(@"C:\Users\fmi");
 
         // GET: /Persons/
         public ActionResult Index()
