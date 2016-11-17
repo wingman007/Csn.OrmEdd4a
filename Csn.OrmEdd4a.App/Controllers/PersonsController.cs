@@ -10,6 +10,7 @@ using Csn.OrmEdd4a.Models;
 using Csn.OrmEdd4a.Dal;
 using Csn.OrmEdd4a.Dal.UnitOfWork;
 using System.Data.OleDb;
+using System.Data.Odbc;
 
 namespace Csn.OrmEdd4a.App.Controllers
 {
@@ -29,6 +30,11 @@ namespace Csn.OrmEdd4a.App.Controllers
         // System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString
 
 //-        private IUnitOfWork db = new AdoUnitOfWork(new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\fmi\Source\Repos\Csn.OrmEdd4a\Csn.OrmEdd4a.Console\App_Data\CsnOrmEdd4a.mdb;Persist Security Info=True"));
+
+        // ERROR [IM002] [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified
+        //private AdoUnitOfWork db = new AdoUnitOfWork(new OdbcConnection(@"DRIVER={MySQL ODBC 5.3 Driver};SERVER=localhost;DATABASE=ormedd;USER=ormedd;PASSWORD=ormedd;OPTION=3;"));
+        // ERROR [IM014] [Microsoft][ODBC Driver Manager] The specified DSN contains an architecture mismatch between the Driver and Application
+        //private AdoUnitOfWork db = new AdoUnitOfWork(new OdbcConnection(@"DSN=OrmEdd;uid=ormedd;pwd=ormedd;DATABASE=ormedd"));
 
         // 4. Files
         // private IUnitOfWork db = new FileUnitOfWork();
