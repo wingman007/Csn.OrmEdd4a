@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>WebApiContrib.Formatting.Jsonp</id>
+    <version>3.0.2</version>
+    <title>WebApiContrib.Formatting.Jsonp</title>
+    <authors>WebApiContrib Contributors</authors>
+    <owners>WebApiContrib Contributors</owners>
+    <licenseUrl>https://github.com/WebApiContrib/WebApiContrib.Formatting.Jsonp/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/WebApiContrib/WebApiContrib.Formatting.Jsonp</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Provides a JSONP MediaTypeFormatter implementation for ASP.NET Web API</description>
+    <summary>Provides a JSONP MediaTypeFormatter implementation for ASP.NET Web API</summary>
+    <releaseNotes>Remove Web API assemblies accidentally included in NuGet package</releaseNotes>
+    <copyright>Copyright WebApiContrib 2012 - 2015</copyright>
+    <tags>webapi webapicontrib jsonp</tags>
+    <dependencies>
+      <dependency id="Microsoft.AspNet.WebApi.Core" version="5.0.0" />
+    </dependencies>
+  </metadata>
+</package>

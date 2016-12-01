@@ -130,13 +130,20 @@
                 command.Connection = _connection;
                 command.CommandText = @"INSERT INTO [Persons] 
                         ([FirstName],[FamilyName],[BirthDate],[Address]) VALUES 
-                        (@Name,@FamilyName,@BirthDate,@Address)";
+                        (@Name,@FamilyName,@BirthDate,@Address); ";
                 Extract(entity, command);
                 #endregion
 
                 _connection.Open();
                 //Perform DB operation here i.e. any CRUD operation 
                 command.ExecuteNonQuery();
+
+                command.CommandText = "SELECT MAX(ID) FROM Persons;"; // ToDo find a better way to get the last inserted ID. Concurency and other problems!!!               
+                using (IDataReader reader = command.ExecuteReader())
+                {
+                    //if (reader.Read()) entity.Id = (int)reader["NewID"];
+                    if (reader.Read()) entity.Id = (int)reader[0];
+                }
             }
             catch (Exception e)
             {

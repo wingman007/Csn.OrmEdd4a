@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csn.OrmEdd4a.App", "Csn.Orm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csn.OrmEdd4a.WebApi", "Csn.OrmEdd4a.WebApi\Csn.OrmEdd4a.WebApi.csproj", "{A7DEB4BB-3E2F-4DBB-945B-C50FD4E69C2C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csn.OrmEdd4a.Spa", "Csn.OrmEdd4a.Spa\Csn.OrmEdd4a.Spa.csproj", "{3FAA93E6-15E5-43B5-B81F-C66A6D9A29BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{A7DEB4BB-3E2F-4DBB-945B-C50FD4E69C2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7DEB4BB-3E2F-4DBB-945B-C50FD4E69C2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7DEB4BB-3E2F-4DBB-945B-C50FD4E69C2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FAA93E6-15E5-43B5-B81F-C66A6D9A29BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FAA93E6-15E5-43B5-B81F-C66A6D9A29BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FAA93E6-15E5-43B5-B81F-C66A6D9A29BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FAA93E6-15E5-43B5-B81F-C66A6D9A29BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
